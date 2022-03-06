@@ -21,28 +21,28 @@ from lunarcalendar import Converter, Solar, Lunar
 solar = Solar(dob)
 lunar = Converter.Solar2Lunar(solar)
 if lunar.day <=1:
-phase='New Moon'
-char='Creative, Adventurous, Impulsive'
+    phase='New Moon'
+    char='Creative, Adventurous, Impulsive'
 elif lunar.day <7:
-phase='Waxing Crescent'
-char= 'Ambitious, Diligent, Risk averse'
+    phase='Waxing Crescent'
+    char= 'Ambitious, Diligent, Risk averse'
 elif lunar.day <9:
-phase='First Quarter'
-char='Talented, Brave, Patient'
+    phase='First Quarter'
+    char='Talented, Brave, Patient'
 elif lunar.day <14:
-phase='Waxing Gibbous'
-char= 'Calm, Gracious, Perfectionist'
+    phase='Waxing Gibbous'
+    char= 'Calm, Gracious, Perfectionist'
 elif lunar.day <17:
-phase='Full Moon'
-char= 'Sensitive, Empathetic, Emotional'
+    phase='Full Moon'
+    char= 'Sensitive, Empathetic, Emotional'
 elif lunar.day <22:
-phase='Waning Gibbous'
-char='Meditative, Analytical, Judgmental'
+    phase='Waning Gibbous'
+    char='Meditative, Analytical, Judgmental'
 elif lunar.day <24:
-phase='Third Quarter'
-char='Loyal, Emotional, Sociable'
+    phase='Third Quarter'
+    char='Loyal, Emotional, Sociable'
 elif lunar.day >=24:
-phase='Waning Crescent'
-char= 'Imaginative, Divergent, Lonesome'
+    phase='Waning Crescent'
+    char= 'Imaginative, Divergent, Lonesome'
 st.write ('Hi {}, your Moon phase is \033[32m {}\033[30m, and your characteristics are \033[32m {}\033[30m.'.format(name,phase,char))
 
