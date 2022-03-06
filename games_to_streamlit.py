@@ -7,7 +7,7 @@ Original file is located at
     https://colab.research.google.com/drive/1NGVPjUCPszdi_aHZAYcq0N-PYX58C_MI
 """
 
-!pip install streamlit
+pip install streamlit
 import streamlit as st
 st.title('Check your Moon phase')
 st.write('Please input your name')
