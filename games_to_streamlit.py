@@ -14,7 +14,7 @@ st.title('Check your Moon phase')
 st.write('Please input your name')
 name=st.text_input('Name')
 st.write('Please input your date of birth (year, month, day)')
-dob=st.date_input('Date of birth',min_value=datetime.date(1800, 7, 6))
+dob=st.date_input('Date of birth',value=None, min_value=datetime.date(1800, 7, 6))
 #year,month,date=[int(i) for i in st.text_input('Date of birth').split()]
 import datetime
 import lunarcalendar
