@@ -26,7 +26,7 @@ def moon_phase():
     char='Creative, Adventurous, Impulsive'
   elif lunar.day <7:
     phase='Waxing Crescent'
-    char= 'Ambitious, Diligent, Risk averse'
+    char= 'Ambitious, Diligent, Risk averse'
   elif lunar.day <9:
     phase='First Quarter'
     char='Talented, Brave, Patient'
@@ -37,10 +37,10 @@ def moon_phase():
     phase='Full Moon'
     char= 'Sensitive, Empathetic, Emotional'
   elif lunar.day <22:
-    phase='Waning Gibbous'
+    phase='Waning Gibbous'
     char='Meditative, Analytical, Judgmental'
   elif lunar.day <24:
-    phase='Third Quarter'
+    phase='Third Quarter'
     char='Loyal, Emotional, Sociable'
   elif lunar.day >=24:
     phase='Waning Crescent'
