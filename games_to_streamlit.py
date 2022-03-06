@@ -18,7 +18,7 @@ year,month,date=[int(i) for i in dob.split()]
 import datetime
 import lunarcalendar
 from lunarcalendar import Converter, Solar, Lunar
-solar = Solar(dob)
+solar = Solar(year, month, date)
 lunar = Converter.Solar2Lunar(solar)
 if lunar.day <=1:
     phase='New Moon'
