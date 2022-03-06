@@ -44,5 +44,5 @@ elif lunar.day <24:
 elif lunar.day >=24:
     phase='Waning Crescent'
     char= 'Imaginative, Divergent, Lonesome'
-st.write ('Hi {}, your Moon phase is \033[32m {}\033[30m, and your characteristics are \033[32m {}\033[30m.'.format(name,phase,char))
+st.write ('Hi {}, your Moon phase is {}, and your characteristics are {}'.format(name,phase,char))
 
