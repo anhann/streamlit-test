@@ -13,8 +13,8 @@ st.title('Check your Moon phase')
 st.write('Please input your name')
 name=st.text_input('Name')
 st.write('Please input your date of birth (year, month, day), for ex: 1996 05 28')
-dob=st.text_input('Date of birth')
-year,month,date=[int(i) for i in dob.split()]
+#dob=st.text_input('Date of birth')
+year,month,date=[int(i) for i in st.text_input('Date of birth').split()]
 import datetime
 import lunarcalendar
 from lunarcalendar import Converter, Solar, Lunar
