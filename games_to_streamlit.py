@@ -19,7 +19,7 @@ try:
     import datetime
     import lunarcalendar
     from lunarcalendar import Converter, Solar, Lunar
-    solar = Solar(year, month, date)
+    solar = Solar(dob)
     lunar = Converter.Solar2Lunar(solar)
     if lunar.day <=1:
         phase='New Moon'
