@@ -19,7 +19,7 @@ dob=st.date_input('Date of birth',min_value=datetime.date(1800, 7, 6))
 import datetime
 import lunarcalendar
 from lunarcalendar import Converter, Solar, Lunar
-solar = Solar(dob)
+solar = Solar(dob.year, dob.month, dob.date)
 lunar = Converter.Solar2Lunar(solar)
 if lunar.day <=1:
     phase='New Moon'
