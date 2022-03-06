@@ -15,6 +15,7 @@ st.write('Please input your date of birth (year, month, day), for ex: 1996 05 28
 dob=st.date_input('Date of birth')
 #year,month,date=[int(i) for i in dob.split()]
 import datetime
+import lunarcalendar
 from lunarcalendar import Converter, Solar, Lunar
 def moon_phase():
   solar = Solar(dob)
