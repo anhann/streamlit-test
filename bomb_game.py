@@ -60,8 +60,8 @@ try:
                 a=pd.DataFrame(a)
                 st.dataframe(a.style.applymap(color_code))
                 st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-        a=pd.DataFrame(a)    
-        st.dataframe(a.style.applymap(color_code))
+            a=pd.DataFrame(a)    
+            st.dataframe(a.style.applymap(color_code))
             #for col in a:
                 #print (' '.join(col))
             if len(input_list)==n*2:
