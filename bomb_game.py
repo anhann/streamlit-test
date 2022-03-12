@@ -40,10 +40,10 @@ try:
                     for i in range(len(bomb_list)):
                         if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
                             count+=1
-                            a[l[0]][l[1]]='\033[33mD\033[30m'
+                            a[l[0]][l[1]]='<*font color=‘yellow’>D</*font>, unsafe_allow_html=True)'
                     if count==0:
                         print('Safe zone!')
-                        a[l[0]][l[1]]='\033[32mX\033[30m'
+                        a[l[0]][l[1]]='<*font color=‘green’>X</*font>, unsafe_allow_html=True)'
                     elif count>=1:
                         st.write ('Watch out! You are close to {} bombs.'.format(count))
                 #for col in a:
