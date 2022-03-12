@@ -20,7 +20,7 @@ while len(bomb_list)<=(n-1):
 # playing part:
 if m==2:
     while len(input_list)<n*2:
-        st.write('Please input your row & column numbers')
+        st.text_input('Please input your row & column numbers - please include space between 2 numbers')
         l=[int(i) for i in input().split()]
         if l[0]>n or l[1]>n or l[0]<=0 or l[1]<=0:
           st.write('Input out of table range')
@@ -56,10 +56,10 @@ if m==2:
         print('\033[32mCongratulation! You win.\033[30m')
 if m==1:
     while len(input_list)<n*2:
-        st.write ('Please input your row & column numbers')
+        st.text_input('Please input your row & column numbers - please include space between 2 numbers')
         l=[int(i) for i in input().split()]
         if l[0]>n or l[1]>n or l[0]<=0 or l[1]<=0:
-          print('Input out of table range')
+          st.write('Input out of table range')
           continue
         if l not in input_list:
             input_list+=[l]
