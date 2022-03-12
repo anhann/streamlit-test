@@ -91,5 +91,5 @@ try:
                 #print (' '.join(col))
             if len(input_list)==n*2:
                 st.write('\033[32mCongratulation! You win.\033[30m')
- except:
+except:
         pass
