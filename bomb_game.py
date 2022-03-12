@@ -9,13 +9,13 @@ try:
         m=st.number_input('Pick a number',1,2)
         import random
         a=np.array([['0']*n for i in range(n)])
-        for col in a:
-                st.write (' '.join(col))
-        #st.dataframe(a)
+        #for col in a:
+                #st.write (' '.join(col))
+        st.dataframe(a)
         bomb_list=[]
         input_list=[]
         while len(bomb_list)<=(n-1):
-            l=[[random.randint(1,n),random.randint(1,n)]]
+            l=[[random.randint(0,n-1),random.randint(0,n-1)]]
             if l[0] not in bomb_list:
                 bomb_list+=l    
         # playing part:
@@ -33,17 +33,17 @@ try:
                     continue
                 if l in bomb_list:
                     st.write('Oops! You step on bomb. End game.')
-                    a[l[0]-1][l[1]-1]='\033[31mB\033[30m'
+                    a[l[0]][l[1]]='<*font color=‘red’>B</*font>, unsafe_allow_html=True)'
                     break
                 else:
                     count=0
                     for i in range(len(bomb_list)):
                         if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
                             count+=1
-                            a[l[0]-1][l[1]-1]='\033[33mD\033[30m'
+                            a[l[0]][l[1]]='\033[33mD\033[30m'
                     if count==0:
                         print('Safe zone!')
-                        a[l[0]-1][l[1]-1]='\033[32mX\033[30m'
+                        a[l[0]][l[1]]='\033[32mX\033[30m'
                     elif count>=1:
                         st.write ('Watch out! You are close to {} bombs.'.format(count))
                 #for col in a:
@@ -69,7 +69,7 @@ try:
                     continue
                 if l in bomb_list:
                     st.write('Oops! You step on bomb. End game.')
-                    a[l[0]-1][l[1]-1]='\033[31mB\033[30m'
+                    a[l[0]][l[1]]='\033[31mB\033[30m'
                     break
                 else:
                     count=0
@@ -78,10 +78,10 @@ try:
                             count+=1
                     if count<=1:
                         print('0 or 1 bombs LOL')
-                        a[l[0]-1][l[1]-1]='\033[32mX\033[30m'
+                        a[l[0]][l[1]]='\033[32mX\033[30m'
                     elif count>=2:
                         st.write ('Watch out! You are close to +2 bombs.')
-                        a[l[0]-1][l[1]-1]='\033[33mD\033[30m'
+                        a[l[0]][l[1]]='\033[33mD\033[30m'
                 st.dataframe(a)
                 #for col in a:
                     #print (' '.join(col))
