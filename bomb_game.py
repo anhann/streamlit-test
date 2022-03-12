@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import matplotlib as mpl
 st.title('Bomb game')
 def color_code(val):
         if val == 'X':
