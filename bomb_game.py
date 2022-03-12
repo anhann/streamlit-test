@@ -98,6 +98,7 @@ try:
                         #for col in a:
                                 #print (' '.join(col))
                         st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        continue
                 st.dataframe(a)
                 #for col in a:
                         #print (' '.join(col))
