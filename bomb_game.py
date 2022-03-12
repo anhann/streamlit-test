@@ -1,6 +1,11 @@
 import streamlit as st
 import numpy as np
 st.title('Bomb game')
+def color(val):
+        color = 'green' if val = 'X'
+        color = 'red' if val = 'B'
+        color = 'yellow' if val = 'D'
+        return f'background-color: {color}'
 try:
         st.write('To play, input the number of column & row you want (>=3 or else you could not win:))')
         n=st.number_input('Pick a number',3,99)
@@ -33,28 +38,28 @@ try:
                     continue
                 if l in bomb_list:
                     st.write('Oops! You step on bomb. End game.')
-                    a[l[0]][l[1]]='<*font color=‘red’>B</*font>, unsafe_allow_html=True)'
+                    a[l[0]][l[1]]='B'
                     break
                 else:
                     count=0
                     for i in range(len(bomb_list)):
                         if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
                             count+=1
-                            a[l[0]][l[1]]='<*font color=‘yellow’>D</*font>, unsafe_allow_html=True)'
+                            a[l[0]][l[1]]='D'
                     if count==0:
                         print('Safe zone!')
-                        a[l[0]][l[1]]='<*font color=‘green’>X</*font>, unsafe_allow_html=True)'
+                        a[l[0]][l[1]]='X'
                     elif count>=1:
                         st.write ('Watch out! You are close to {} bombs.'.format(count))
                 #for col in a:
                     #print (' '.join(col))
-                st.dataframe(a)
+                st.dataframe(a.style.applymap(color)
                 st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-            st.dataframe(a)
+            st.dataframe(a.style.applymap(color)
             #for col in a:
                 #print (' '.join(col))
             if len(input_list)==n*2:
-                print('\033[32mCongratulation! You win.\033[30m')
+                print('Congratulation! You win')
         if m==1:
             while len(input_list)<n*2:
                 x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
