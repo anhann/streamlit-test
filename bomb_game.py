@@ -10,7 +10,7 @@ import random
 a=np.array([['0']*n for i in range(n)])
 #for col in a:
         #print (' '.join(col))
-st.image(a)
+st.dataframe(a)
 bomb_list=[]
 input_list=[]
 while len(bomb_list)<=(n-1):
