@@ -1,10 +1,13 @@
 import streamlit as st
 import numpy as np
 st.title('Bomb game')
-def color(val):
-        color = 'green' if val = 'X'
-        color = 'red' if val = 'B'
-        color = 'yellow' if val = 'D'
+def color_code(val):
+        if val = 'X':
+                color = 'green'
+        elif val = 'B':
+                color = 'red'
+        elif val = 'D':
+                color = 'yellow' 
         return f'background-color: {color}'
 try:
         st.write('To play, input the number of column & row you want (>=3 or else you could not win:))')
@@ -53,9 +56,9 @@ try:
                         st.write ('Watch out! You are close to {} bombs.'.format(count))
                 #for col in a:
                     #print (' '.join(col))
-                st.dataframe(a.style.applymap(color)
+                st.dataframe(a.style.applymap(color_code)
                 st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-            st.dataframe(a.style.applymap(color)
+            st.dataframe(a.style.applymap(color_code)
             #for col in a:
                 #print (' '.join(col))
             if len(input_list)==n*2:
