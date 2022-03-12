@@ -56,9 +56,9 @@ try:
                         st.write ('Watch out! You are close to {} bombs.'.format(count))
                 #for col in a:
                     #print (' '.join(col))
-                st.dataframe(a.style.applymap(color_code)
+                st.dataframe(a.style.applymap(color_code))
                 st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-            st.dataframe(a.style.applymap(color_code)
+            st.dataframe(a.style.applymap(color_code))
             #for col in a:
                 #print (' '.join(col))
             if len(input_list)==n*2:
