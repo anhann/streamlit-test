@@ -20,8 +20,8 @@ while len(bomb_list)<=(n-1):
 # playing part:
 if m==2:
     while len(input_list)<n*2:
-        st.text_input('Please input your row & column numbers - please include space between 2 numbers')
-        l=[int(i) for i in input().split()]
+        x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
+        l=[int(i) for i in x.split()]
         if l[0]>n or l[1]>n or l[0]<=0 or l[1]<=0:
           st.write('Input out of table range')
           continue
@@ -47,17 +47,17 @@ if m==2:
                 st.write ('Watch out! You are close to {} bombs.'.format(count))
         #for col in a:
             #print (' '.join(col))
-        st.image(a)
+        st.dataframe(a)
         st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-    st.image(a)
+    st.dataframe(a)
     #for col in a:
         #print (' '.join(col))
     if len(input_list)==n*2:
         print('\033[32mCongratulation! You win.\033[30m')
 if m==1:
     while len(input_list)<n*2:
-        st.text_input('Please input your row & column numbers - please include space between 2 numbers')
-        l=[int(i) for i in input().split()]
+        x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
+        l=[int(i) for i in x.split()]
         if l[0]>n or l[1]>n or l[0]<=0 or l[1]<=0:
           st.write('Input out of table range')
           continue
@@ -81,11 +81,11 @@ if m==1:
             elif count>=2:
                 st.write ('Watch out! You are close to +2 bombs.')
                 a[l[0]-1][l[1]-1]='\033[33mD\033[30m'
-        st.image(a)
+        st.dataframe(a)
         #for col in a:
             #print (' '.join(col))
         st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-    st.image(a)
+    st.dataframe(a)
     #for col in a:
         #print (' '.join(col))
     if len(input_list)==n*2:
