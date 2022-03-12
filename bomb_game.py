@@ -59,7 +59,8 @@ try:
                         #print (' '.join(col))
                         #st.dataframe(a.style.applymap(color_code))
                         st.dataframe(a)
-                        st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))   
+                        st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        continue
                 #st.dataframe(a.style.applymap(color_code))
                 st.dataframe(a)
                 #for col in a:
