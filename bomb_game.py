@@ -1,7 +1,6 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import matplotlib as mpl
 st.title('Bomb game')
 def color_code(val):
         if val == 'X':
@@ -25,9 +24,9 @@ try:
         bomb_list=[]
         input_list=[]
         while len(bomb_list)<=(n-1):
-            l=[[random.randint(0,n-1),random.randint(0,n-1)]]
-            if l[0] not in bomb_list:
-                bomb_list+=l    
+                l=[[random.randint(0,n-1),random.randint(0,n-1)]]
+                if l[0] not in bomb_list:
+                        bomb_list+=l    
         # playing part:
         if m==2:
             while len(input_list)<n*2:
