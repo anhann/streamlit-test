@@ -1,4 +1,5 @@
 import streamlit as st
+import numpy as np
 st.title('Bomb game')
 st.write('To play, input the number of column & row you want (>=3 or else you could not win:))')
 n=st.number_input('Pick a number',0,99)
@@ -6,7 +7,7 @@ st.write('This is a simple bomb game. The number of column and row is {} each. T
 st.write('\nPlease choose the difficulty level. Input 1 for harder mode, which means there is only alert if you near 2 bombs and above.\n2 is for easier mode, means I will inform the number of bomb around your input area')
 m=st.number_input('Pick a number',1,2)
 import random
-a=[['0']*n for i in range(n)]
+a=np.array([['0']*n for i in range(n)])
 #for col in a:
         #print (' '.join(col))
 st.image(a)
