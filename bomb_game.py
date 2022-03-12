@@ -2,11 +2,11 @@ import streamlit as st
 import numpy as np
 st.title('Bomb game')
 def color_code(val):
-        if val = 'X':
+        if val == 'X':
                 color = 'green'
-        elif val = 'B':
+        elif val == 'B':
                 color = 'red'
-        elif val = 'D':
+        elif val == 'D':
                 color = 'yellow' 
         return f'background-color: {color}'
 try:
