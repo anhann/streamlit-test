@@ -81,7 +81,7 @@ try:
                                 continue
                         if l in bomb_list:
                                 st.write('Oops! You step on bomb. End game.')
-                                a[l[0]][l[1]]='\033[31mB\033[30m'
+                                a[l[0]][l[1]]='B'
                                 break
                         else:
                                 count=0
@@ -90,10 +90,10 @@ try:
                                                 count+=1
                                 if count<=1:
                                         print('0 or 1 bombs LOL')
-                                        a[l[0]][l[1]]='\033[32mX\033[30m'
+                                        a[l[0]][l[1]]='X'
                                 elif count>=2:
                                         st.write ('Watch out! You are close to +2 bombs.')
-                                        a[l[0]][l[1]]='\033[33mD\033[30m'
+                                        a[l[0]][l[1]]='D'
                         st.dataframe(a)
                         #for col in a:
                                 #print (' '.join(col))
@@ -102,6 +102,6 @@ try:
                 #for col in a:
                         #print (' '.join(col))
                 if len(input_list)==n*2:
-                        st.write('\033[32mCongratulation! You win.\033[30m')
+                        st.write('Congratulation! You win')
 except:
         pass
