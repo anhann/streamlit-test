@@ -30,9 +30,8 @@ try:
         # playing part:
         if m==2:
                 while len(input_list)<n*2:
-                        if st.button('Click to continue'):
-                                x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
-                        l=[int(i) for i in x.split()]
+                        #x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
+                        l=[int(i) for i in st.text_input('Please input your row & column numbers - please include space between 2 numbers').split()]
                         if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
                                 st.write('Input out of table range')
                                 continue
