@@ -87,6 +87,7 @@ if m==1:
                 if l in bomb_list:
                         st.write('Oops! You step on bomb. End game.')
                         a[l[0]][l[1]]='B'
+                        st.dataframe(a)
                         break
                 else:
                         count=0
