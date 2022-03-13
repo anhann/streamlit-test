@@ -29,8 +29,8 @@ try:
                         bomb_list+=l    
         # playing part:
         if m==2:
+                x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
                 while len(input_list)<n*2:
-                        x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
                         l=[int(i) for i in x.split()]
                         if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
                                 st.write('Input out of table range')
@@ -60,6 +60,7 @@ try:
                         #st.dataframe(a.style.applymap(color_code))
                         st.dataframe(a)
                         st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
                         continue
                 #st.dataframe(a.style.applymap(color_code))
                 st.dataframe(a)
