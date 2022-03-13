@@ -32,36 +32,36 @@ try:
                 while len(input_list)<n*2:
                         if st.button('Click to continue'):
                                 x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
-                                l=[int(i) for i in x.split()]
-                                if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
-                                        st.write('Input out of table range')
-                                        continue
-                                if l not in input_list:
-                                        input_list+=[l]
-                                else:
-                                        st.write('You enter the same cell. Please try again!')
-                                        continue
-                                if l in bomb_list:
-                                        st.write('Oops! You step on bomb. End game.')
-                                        a[l[0]][l[1]]='B'
-                                        break
-                                else:
-                                        count=0
-                                        for i in range(len(bomb_list)):
-                                                if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
-                                                        count+=1
-                                                        a[l[0]][l[1]]='D'
-                                        if count==0:
-                                                print('Safe zone!')
-                                                a[l[0]][l[1]]='X'
-                                        elif count>=1:
-                                                st.write ('Watch out! You are close to {} bombs.'.format(count))
-                                #for col in a:
-                                #print (' '.join(col))
-                                #st.dataframe(a.style.applymap(color_code))
-                                st.dataframe(a)
-                                st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        l=[int(i) for i in x.split()]
+                        if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
+                                st.write('Input out of table range')
                                 continue
+                        if l not in input_list:
+                                input_list+=[l]
+                        else:
+                                st.write('You enter the same cell. Please try again!')
+                                continue
+                        if l in bomb_list:
+                                st.write('Oops! You step on bomb. End game.')
+                                a[l[0]][l[1]]='B'
+                                break
+                        else:
+                                count=0
+                                for i in range(len(bomb_list)):
+                                        if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
+                                                count+=1
+                                                a[l[0]][l[1]]='D'
+                                if count==0:
+                                        print('Safe zone!')
+                                        a[l[0]][l[1]]='X'
+                                elif count>=1:
+                                        st.write ('Watch out! You are close to {} bombs.'.format(count))
+                        #for col in a:
+                        #print (' '.join(col))
+                        #st.dataframe(a.style.applymap(color_code))
+                        st.dataframe(a)
+                        st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        continue
                 #st.dataframe(a.style.applymap(color_code))
                 st.dataframe(a)
                 #for col in a:
