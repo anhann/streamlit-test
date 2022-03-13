@@ -55,7 +55,7 @@ if m==2:
                                         count+=1
                                         a[l[0]][l[1]]='D'
                         if count==0:
-                                print('Safe zone - no bomb around!')
+                                st.write('Safe zone - no bomb around!')
                                 a[l[0]][l[1]]='X'
                         elif count>=1:
                                 st.write ('Watch out! You are close to {} bombs.'.format(count))
@@ -94,7 +94,7 @@ if m==1:
                                 if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
                                         count+=1
                         if count<=1:
-                                print('0 or 1 bombs around')
+                                st.write('0 or 1 bombs around')
                                 a[l[0]][l[1]]='X'
                         elif count>=2:
                                 st.write ('Watch out! You are close to +2 bombs.')
