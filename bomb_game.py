@@ -10,26 +10,27 @@ def color_code(val):
         elif val == 'D':
                 color = 'yellow' 
         return f'background-color: {color}'
+
+st.write('To play, input the number of column & row you want (>=3 or else you could not win:))')
+n=st.number_input('Pick a number',3,99)
+st.write('This is a simple bomb game. The number of column and row is {} each. There will be {} bombs in the field'.format(int(n),int(n)))
+st.write('Whenever you input a row & column number (for ex 3 4 - remember to include space between 2 numbers!), I will inform you on the bomb risk.In all cases, D letter means Danger zone where you are close to bomb, X letter mean Safer zone.')
+st.write('If you can survive {} times of input, you win!'.format(int(n*2)))
+st.write('Please choose the difficulty level. Input 1 for harder mode, which means there is only alert if you near 2 bombs and above.\n2 is for easier mode, means I will inform the number of bomb around your input area')
+m=st.number_input('Pick a number',1,2)
+import random
+a=np.array([['0']*n for i in range(n)])
+#for col in a:
+        #st.write (' '.join(col))
+st.dataframe(a)
+bomb_list=[]
+input_list=[]
+text_input_list=[str(i+1) for i in range(n*2)]
+while len(bomb_list)<=(n-1):
+        l=[[random.randint(0,n-1),random.randint(0,n-1)]]
+        if l[0] not in bomb_list:
+                bomb_list+=l    
 try:
-        st.write('To play, input the number of column & row you want (>=3 or else you could not win:))')
-        n=st.number_input('Pick a number',3,99)
-        st.write('This is a simple bomb game. The number of column and row is {} each. There will be {} bombs in the field'.format(int(n),int(n)))
-        st.write('Whenever you input a row & column number (for ex 3 4 - remember to include space between 2 numbers!), I will inform you on the bomb risk.In all cases, D letter means Danger zone where you are close to bomb, X letter mean Safer zone.')
-        st.write('If you can survive {} times of input, you win!'.format(int(n*2)))
-        st.write('Please choose the difficulty level. Input 1 for harder mode, which means there is only alert if you near 2 bombs and above.\n2 is for easier mode, means I will inform the number of bomb around your input area')
-        m=st.number_input('Pick a number',1,2)
-        import random
-        a=np.array([['0']*n for i in range(n)])
-        #for col in a:
-                #st.write (' '.join(col))
-        st.dataframe(a)
-        bomb_list=[]
-        input_list=[]
-        text_input_list=[str(i+1) for i in range(n*2)]
-        while len(bomb_list)<=(n-1):
-                l=[[random.randint(0,n-1),random.randint(0,n-1)]]
-                if l[0] not in bomb_list:
-                        bomb_list+=l    
         # playing part:
         if m==2:
                 while len(input_list)<n*2:
