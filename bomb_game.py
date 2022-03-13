@@ -22,7 +22,7 @@ a=np.array([['0']*n for i in range(n)])
 st.dataframe(a)
 bomb_list=[]
 input_list=[]
-text_input_list=[i+1 for i in range(n*2)]
+text_input_list=[str(i+1) for i in range(n*2)]
 while len(bomb_list)<=(n-1):
         l=[[random.randint(0,n-1),random.randint(0,n-1)]]
         if l[0] not in bomb_list:
