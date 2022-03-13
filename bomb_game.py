@@ -62,12 +62,12 @@ try:
                                 st.dataframe(a)
                                 st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
                                 continue
-                        #st.dataframe(a.style.applymap(color_code))
-                        st.dataframe(a)
-                        #for col in a:
-                                #print (' '.join(col))
-                        if len(input_list)==n*2:
-                                st.write('Congratulation! You win')
+                #st.dataframe(a.style.applymap(color_code))
+                st.dataframe(a)
+                #for col in a:
+                        #print (' '.join(col))
+                if len(input_list)==n*2:
+                        st.write('Congratulation! You win')
         if m==1:
                 while len(input_list)<n*2:
                         x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
