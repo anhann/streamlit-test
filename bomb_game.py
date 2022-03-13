@@ -1,4 +1,12 @@
 import streamlit as st
+if 'count' not in st.session_state:
+    st.session_state.count = 0
+
+increment = st.button('Refresh')
+if increment:
+    st.session_state.count += 1
+
+st.write('Count = ', st.session_state.count)
 import numpy as np
 import pandas as pd
 st.title('Bomb game')
