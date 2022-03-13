@@ -30,7 +30,6 @@ try:
         # playing part:
         if m==2:
                 while len(input_list)<n*2:
-                        time.sleep(3)
                         x=st.text_input('Please input your row & column numbers - please include space between 2 numbers')
                         l=[int(i) for i in x.split()]
                         if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
@@ -61,7 +60,7 @@ try:
                         #st.dataframe(a.style.applymap(color_code))
                         st.dataframe(a)
                         st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))                      
-                        continue
+                        time.sleep(1)
                 #st.dataframe(a.style.applymap(color_code))
                 st.dataframe(a)
                 #for col in a:
