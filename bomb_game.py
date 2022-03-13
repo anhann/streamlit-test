@@ -34,7 +34,6 @@ try:
         # playing part:
         if m==2:
                 while len(input_list)<n*2:
-                        #x=st.text_input('Please input your row & column numbers - please include space between 2 numbers', key = text_input_list[len(input_list)])
                         x= st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
                         l=[int(i) for i in x.split()]
                         if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
@@ -74,7 +73,7 @@ try:
                         st.write('Congratulation! You win')
         if m==1:
                 while len(input_list)<n*2:
-                        x=st.text_input('Please input your row & column numbers - please include space between 2 numbers', key = text_input_list[len(input_list)])
+                        x= st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
                         l=[int(i) for i in x.split()]
                         if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
                                 st.write('Input out of table range')
