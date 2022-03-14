@@ -1,14 +1,15 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from datetime import date
+from datetime import datetime
 import random
 
-today = date.today()
+today = datetime.now()
 d = int(today.strftime("%d"))
 m = int(today.strftime("%m"))
 y = int(today.strftime("%Y"))
-state=d+m+y
+h = int(today.strftime("%H"))
+state=d+m+y+h
 
 st.title('Bomb game')
 st.markdown('_Anh''s game_')
