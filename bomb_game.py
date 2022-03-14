@@ -11,7 +11,7 @@ y = int(today.strftime("%Y"))
 state=d+m+y
 
 st.title('Bomb game')
-st.markdown('**By Anh Nguyen**')
+st.markdown('_By Anh Nguyen_')
 def color_code(val):
         if val == 'X':
                 color = 'green'
