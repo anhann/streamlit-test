@@ -44,85 +44,88 @@ while len(bomb_list)<=(n-1):
         if l[0] not in bomb_list:
                 bomb_list+=l 
         state+=5
-# playing part:
-if m==2:
-        while len(input_list)<n*2:
-                text_input[len(input_list)]=st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
-                l=[int(i) for i in text_input[len(input_list)].split()]
-                if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
-                        st.write('Input out of table range')
-                        continue
-                if l not in input_list:
-                        input_list+=[l]
-                else:
-                        st.write('You enter the same cell. Please try again!')
-                        continue
-                if l in bomb_list:
-                        st.write('Oops! You step on bomb. End game.')
-                        a[l[0]][l[1]]='B'
+try:
+        # playing part:
+        if m==2:
+                while len(input_list)<n*2:
+                        text_input[len(input_list)]=st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
+                        l=[int(i) for i in text_input[len(input_list)].split()]
+                        if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
+                                st.write('Input out of table range')
+                                continue
+                        if l not in input_list:
+                                input_list+=[l]
+                        else:
+                                st.write('You enter the same cell. Please try again!')
+                                continue
+                        if l in bomb_list:
+                                st.write('Oops! You step on bomb. End game.')
+                                a[l[0]][l[1]]='B'
+                                st.dataframe(a)
+                                break
+                        else:
+                                count=0
+                                for i in range(len(bomb_list)):
+                                        if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
+                                                count+=1
+                                                a[l[0]][l[1]]='D'
+                                if count==0:
+                                        st.write('Safe zone - no bomb around!')
+                                        a[l[0]][l[1]]='X'
+                                elif count>=1:
+                                        st.write ('Watch out! You are close to {} bombs.'.format(count))
+                        #for col in a:
+                        #print (' '.join(col))
+                        #st.dataframe(a.style.applymap(color_code))
                         st.dataframe(a)
-                        break
-                else:
-                        count=0
-                        for i in range(len(bomb_list)):
-                                if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
-                                        count+=1
+                        st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+
+                        if len(input_list)==n*2:
+                                #st.dataframe(a.style.applymap(color_code))
+                                #for col in a:
+                                        #print (' '.join(col))
+                                st.write('Congratulation! You win')
+                        continue
+
+        if m==1:
+                while len(input_list)<n*2:
+                        text_input[len(input_list)]=st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
+                        l=[int(i) for i in text_input[len(input_list)].split()]
+                        if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
+                                st.write('Input out of table range')
+                                continue
+                        if l not in input_list:
+                                input_list+=[l]
+                        else:
+                                st.write('You enter the same cell. Please try again!')
+                                continue
+                        if l in bomb_list:
+                                st.write('Oops! You step on bomb. End game.')
+                                a[l[0]][l[1]]='B'
+                                st.dataframe(a)
+                                break
+                        else:
+                                count=0
+                                for i in range(len(bomb_list)):
+                                        if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
+                                                count+=1
+                                if count<=1:
+                                        st.write('0 or 1 bombs around')
+                                        a[l[0]][l[1]]='X'
+                                elif count>=2:
+                                        st.write ('Watch out! You are close to +2 bombs.')
                                         a[l[0]][l[1]]='D'
-                        if count==0:
-                                st.write('Safe zone - no bomb around!')
-                                a[l[0]][l[1]]='X'
-                        elif count>=1:
-                                st.write ('Watch out! You are close to {} bombs.'.format(count))
-                #for col in a:
-                #print (' '.join(col))
-                #st.dataframe(a.style.applymap(color_code))
-                st.dataframe(a)
-                st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
-
-                if len(input_list)==n*2:
-                        #st.dataframe(a.style.applymap(color_code))
                         #for col in a:
-                                #print (' '.join(col))
-                        st.write('Congratulation! You win')
-                continue
-
-if m==1:
-        while len(input_list)<n*2:
-                text_input[len(input_list)]=st.text_input('Please input your row & column numbers the {} time - please include space between 2 numbers'.format(text_input_list[len(input_list)]))
-                l=[int(i) for i in text_input[len(input_list)].split()]
-                if l[0]>n-1 or l[1]>n-1 or l[0]<0 or l[1]<0:
-                        st.write('Input out of table range')
-                        continue
-                if l not in input_list:
-                        input_list+=[l]
-                else:
-                        st.write('You enter the same cell. Please try again!')
-                        continue
-                if l in bomb_list:
-                        st.write('Oops! You step on bomb. End game.')
-                        a[l[0]][l[1]]='B'
+                        #print (' '.join(col))
+                        #st.dataframe(a.style.applymap(color_code))
                         st.dataframe(a)
-                        break
-                else:
-                        count=0
-                        for i in range(len(bomb_list)):
-                                if abs(l[0]-bomb_list[i][0])<=1 and abs(l[1]-bomb_list[i][1])<=1:  
-                                        count+=1
-                        if count<=1:
-                                st.write('0 or 1 bombs around')
-                                a[l[0]][l[1]]='X'
-                        elif count>=2:
-                                st.write ('Watch out! You are close to +2 bombs.')
-                                a[l[0]][l[1]]='D'
-                #for col in a:
-                #print (' '.join(col))
-                #st.dataframe(a.style.applymap(color_code))
-                st.dataframe(a)
-                st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
+                        st.write('Fighting! Only {} more times to win'.format(n*2-len(input_list)))
 
-                if len(input_list)==n*2:
-                        #st.dataframe(a.style.applymap(color_code))
-                        #for col in a:
-                                #print (' '.join(col))
-                        st.write('Congratulation! You win')
-                continue
+                        if len(input_list)==n*2:
+                                #st.dataframe(a.style.applymap(color_code))
+                                #for col in a:
+                                        #print (' '.join(col))
+                                st.write('Congratulation! You win')
+                        continue
+except:
+        pass
