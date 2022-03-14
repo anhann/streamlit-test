@@ -4,6 +4,7 @@ import datetime
 from lunarcalendar import Converter, Solar, Lunar
 
 st.title('Check your Moon phase')
+st.markdown('_Anh''s game_')
 st.write('Please input your name')
 name=st.text_input('Name')
 st.write('Please input your date of birth (yy/mm/dd). You can use the selection board or manually input')
